@@ -1,4 +1,10 @@
 @charset "utf-8";
+
+body {
+	cursor: url("images/cursor.cur"), auto;
+}
+
+
 .footer-vadzim {
 	height: 100%;
     width: 100%;
