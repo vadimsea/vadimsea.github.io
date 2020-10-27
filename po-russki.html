@@ -36,71 +36,7 @@
 		    document.oncontextmenu = noselect; 
 		    function noselect() {return false;} 
 	</script>
-	  <script type="text/javascript">
-		let currentSlide = 0; // Current Slide
-		let images = []; // Images Array
-
-		// Images List
-		images[0] = 'https://austinbnetworking.github.io/Archives/lightbox/images/1.jpg';
-		images[1] = 'https://austinbnetworking.github.io/Archives/lightbox/images/2.jpg';
-		images[2] = 'https://austinbnetworking.github.io/Archives/lightbox/images/3.jpg';
-		images[3] = 'https://austinbnetworking.github.io/Archives/lightbox/images/4.jpg';
-		images[4] = 'https://austinbnetworking.github.io/Archives/lightbox/images/5.jpg';
-		images[5] = 'https://austinbnetworking.github.io/Archives/lightbox/images/6.jpg';
-
-		// Opens Lightbox
-		function openModal() {
-		    document.querySelector(".lightboxContainer").style.display = "flex";
-		    document.body.style.overflow = "hidden";
-		    document.querySelector(".gallery").style.filter = "blur(5px)";
-		}
-
-		// Closes Lightbox
-		function closeModal() {
-		    document.querySelector(".lightboxContainer").style.display = "none";
-		    document.body.style.overflow = "initial";  
-		    document.querySelector(".gallery").style.filter = "blur(0)";
-		}
-
-		// Sets Current Image to Lightbox when clicked
-		// Returns the Current Slide Index
-		function changeImage(n) {
-		    document.activeImage.src = images[n];
-		    currentSlide = n;
-		    return currentSlide;
-		}
-
-		// Cycles Through Images
-		// n is either 1 (next slide) or -1 (previous slide)
-		function nextSlide(n) {
-
-		    if (currentSlide < 1 && n == -1) {
-			//IF at first slide AND selecting previous slide
-			currentSlide = images.length - 1;
-			document.activeImage.src = images[currentSlide];
-			return currentSlide;
-
-		    } else if (currentSlide < images.length - 1 && currentSlide >= 0 && n == 1) {
-			//IF at any slide besides the last AND going up
-			currentSlide = currentSlide + 1;
-			document.activeImage.src = images[currentSlide];
-			return currentSlide;
-
-		    } else if (currentSlide == images.length - 1 && n == 1) {
-			//IF at final slide last AND going up
-			currentSlide = 0;
-			document.activeImage.src = images[currentSlide];
-			return currentSlide;
-
-		    } else {
-			//Anything else (going down AND not at first slide)
-			currentSlide = currentSlide - 1;
-			document.activeImage.src = images[currentSlide];
-			return currentSlide;
-
-		    }
-		}
-	</script>
+	 
 	  
   </head>
   <body style="padding-top: 70px">
@@ -176,39 +112,7 @@ I have expertise in designing all types of bespoke websites including personal w
 	    
 	    
 	    
-	<!-- Lightbox Gallery -->
-    <div class="gallery">
-
-        <h2>Welcome to Responsive Gallery</h2>
-
-        <div class="row">
-            <img src="https://austinbnetworking.github.io/Archives/lightbox/images/1.jpg" onclick="openModal();changeImage(0)" alt="    Template Image">
-            <img src="https://austinbnetworking.github.io/Archives/lightbox/images/2.jpg" onclick="openModal();changeImage(1)" alt=" Template Image">
-            <img src="https://austinbnetworking.github.io/Archives/lightbox/images/3.jpg" onclick="openModal();changeImage(2)" alt=" Template Image">
-        </div>
-
-        <div class="row">
-            <img src="https://austinbnetworking.github.io/Archives/lightbox/images/4.jpg" onclick="openModal();changeImage(3)" alt=" Template Image">
-            <img src="https://austinbnetworking.github.io/Archives/lightbox/images/5.jpg" onclick="openModal();changeImage(4)" alt=" Template Image">
-            <img src="https://austinbnetworking.github.io/Archives/lightbox/images/6.jpg" onclick="openModal();changeImage(5)" alt=" Template Image">
-        </div>
-
-    </div>
-
-    <div class="lightboxContainer">
-
-        <div class="lightbox">
-            <div class="close" onclick="closeModal()"> &#10006; </div>
-
-            <div class="prev" onclick="nextSlide(-1)"> &#60; </div>
-            <div class="activeImage">
-                <img name="activeImage" src="" alt="">
-            </div>
-            <div class="next" onclick="nextSlide(1)"> &#62; </div>
-        </div>
-
-    </div>
-    <!-- End of Lightbox Gallery -->    
+	
 	    
 	    
 	    
